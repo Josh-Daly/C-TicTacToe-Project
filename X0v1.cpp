@@ -104,7 +104,7 @@ int main()
 
 	//clear screen command
 	system("cls");
-	cout << "Game Function terminated." << endl;
+	cout << "Game Ended." << endl;
 
 	return 0;
 }
