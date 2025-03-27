@@ -145,7 +145,7 @@ int main()
 
 
 
-			//Press y at this part to clear screen and show board again, n to end game
+			//Press y at this part to clear screen and show board again, n to end game.
 			cout << "Next move?:" << endl;
 			cin >> ans;
 			system("cls");
