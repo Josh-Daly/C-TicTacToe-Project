@@ -1,16 +1,17 @@
 #include <iostream>
 #include <stdlib.h> 
+
 using namespace std;
 
 int main()
 {
 	int state = 1, i, j;
-	//State: 1 is setup, 2 is showing board/reshowing, 3 happens if player moves and lets opponent move, 0 is game exited
+	//State: 1 is setup, 2 is showing, 3 is player move, 4 is enemy move, 0 is game exited
 	char ans = 'n';
 	const int BOARDSIZE = 5;
 	char gameBoard[BOARDSIZE][BOARDSIZE];
-
-
+	string possMoves[] = { "TL","TM","TR","ML","M","MR","BL","BM","BR" };
+	int possMovesVal = 9;
 
 	while (state != 0)
 	{
@@ -61,9 +62,10 @@ int main()
 			gameBoard[4][4] = ' ';
 			// Above = []|[]|[]
 
-			state = 2;
+			state = 3;
 		}
 
+		//Loop to show game board, used if player enters wrong move
 		if (state == 2)
 		{
 			//Print Board
@@ -82,12 +84,69 @@ int main()
 
 			}
 
+			cout << "Possible moves: (";
+			for (i = 0; i < possMovesVal; i++)
+			{
+				cout << possMoves[i];
+				if (i < possMovesVal - 1)
+				{
+					cout << ", ";
+				}
+			}
+			cout << ")" << endl;
 
 
-
-
-
+			//Press y at this part to clear screen and show board again, n to end game
 			cout << "Resume?" << endl;
+			cin >> ans;
+			system("cls");
+			if (ans != 'y' && ans != 'Y')
+			{
+				//If ans isnt Y or y, turn state to 0, which ends the game
+				state = 0;
+			}
+			else
+			{
+				//If ans is y, set state to 3, which allows to make a move
+				state = 3;
+			}
+
+		}
+
+		//Loop to let player move
+		if (state == 3)
+		{
+			//Print Board
+			for (i = 0; i < BOARDSIZE; i++)
+			{
+				for (j = 0; j < BOARDSIZE; j++)
+				{
+					cout << gameBoard[i][j];
+				}
+				cout << endl;
+			}
+
+			//Loop to check for victory conditions
+			for (i = 0; i < BOARDSIZE; i++)
+			{
+
+			}
+
+			cout << "Possible moves: (";
+			for (i = 0; i < possMovesVal; i++)
+			{
+				cout << possMoves[i];
+				if (i < possMovesVal - 1)
+				{
+					cout << ", ";
+				}
+			}
+			cout << ")" << endl;
+
+
+
+			//Press y at this part to clear screen and show board again, n to end game
+			cout << "Next move?:" << endl;
 			cin >> ans;
 			system("cls");
 			if (ans != 'y' && ans != 'Y')
@@ -98,13 +157,12 @@ int main()
 		}
 
 
-
 		system("cls");
 	}
 
 	//clear screen command
 	system("cls");
-	cout << "Game Ended." << endl;
+	cout << "Game ended." << endl;
 
 	return 0;
 }
