@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 	int state = 1, i, j;
-	//State: 1 is setup, 2 is playing, 0 is game exited
+	//State: 1 is setup, 2 is showing board/reshowing, 3 happens if player moves and lets opponent move, 0 is game exited
 	char ans = 'n';
 	const int BOARDSIZE = 5;
 	char gameBoard[BOARDSIZE][BOARDSIZE];
