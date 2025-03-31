@@ -3,6 +3,7 @@
 
 using namespace std;
 
+
 int main()
 {
 	int state = 1, i, j;
@@ -13,6 +14,10 @@ int main()
 	string possMoves[] = { "TL","TM","TR","ML","M","MR","BL","BM","BR" };
 	int possMovesVal = 9;
 	string move;
+	int XorY = 1;
+
+
+	
 
 	while (state != 0)
 	{
@@ -138,92 +143,206 @@ int main()
 			cout << "Make your move (TL, TM, TR, ML, M, MR, BL, BM, BR): " << endl;
 			cin >> move;
 
+
+
+			
+
 			if (move == "TL") {
-				if (gameBoard[0][0] == ' ') {
+				if(XorY%2==1)
+				{
+					if (gameBoard[0][0] == ' ') {
 					gameBoard[0][0] = 'X'; 
-				}
-				else {
+					}
+					else {
 					cout << "Cell already occupied!" << endl;
 					continue;  
+					}
 				}
+				else {
+					if (gameBoard[0][0] == ' ') {
+						gameBoard[0][0] = 'O';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
+				}
+				XorY++;
+				
 			}
 			else if (move == "TM") {
-				if (gameBoard[0][2] == ' ') {
-					gameBoard[0][2] = 'X';
+				if (XorY % 2 == 1)
+				{
+					if (gameBoard[0][2] == ' ') {
+						gameBoard[0][2] = 'X';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
 				}
 				else {
-					cout << "Cell already occupied!" << endl;
-					continue;  
-				}
+					if (gameBoard[0][2] == ' ') {
+						gameBoard[0][2] = 'O';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
+				}XorY++;
 			}
 			else if (move == "TR") {
-				if (gameBoard[0][4] == ' ') {
-					gameBoard[0][4] = 'X';  
+				if (XorY % 2 == 1)
+				{
+					if (gameBoard[0][4] == ' ') {
+						gameBoard[0][4] = 'X';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
 				}
 				else {
-					cout << "Cell already occupied!" << endl;
-					continue;  
-				}
+					if (gameBoard[0][4] == ' ') {
+						gameBoard[0][4] = 'O';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
+				}XorY++;
 			}
 			else if (move == "ML") {
-				if (gameBoard[2][0] == ' ') {
-					gameBoard[2][0] = 'X';  
+				if (XorY % 2 == 1)
+				{
+					if (gameBoard[2][0] == ' ') {
+						gameBoard[2][0] = 'X';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
 				}
 				else {
-					cout << "Cell already occupied!" << endl;
-					continue;  
-				}
+					if (gameBoard[2][0] == ' ') {
+						gameBoard[2][0] = 'O';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
+				}XorY++;
 			}
 			else if (move == "M") {
-				if (gameBoard[2][2] == ' ') {
-					gameBoard[2][2] = 'X';  
+				if (XorY % 2 == 1)
+				{
+					if (gameBoard[2][2] == ' ') {
+						gameBoard[2][2] = 'X';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
 				}
 				else {
-					cout << "Cell already occupied!" << endl;
-					continue;  
-				}
+					if (gameBoard[2][2] == ' ') {
+						gameBoard[2][2] = 'O';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
+				}XorY++;
 			}
 			else if (move == "MR") {
-				if (gameBoard[2][4] == ' ') {
-					gameBoard[2][4] = 'X';  
+				if (XorY % 2 == 1)
+				{
+					if (gameBoard[2][4] == ' ') {
+						gameBoard[2][4] = 'X';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
 				}
 				else {
-					cout << "Cell already occupied!" << endl;
-					continue; 
-				}
+					if (gameBoard[2][4] == ' ') {
+						gameBoard[2][4] = 'O';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
+				}XorY++;
 			}
 			else if (move == "BL") {
-				if (gameBoard[4][0] == ' ') {
-					gameBoard[4][0] = 'X';  
+				if (XorY % 2 == 1)
+				{
+					if (gameBoard[4][0] == ' ') {
+						gameBoard[4][0] = 'X';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
 				}
 				else {
-					cout << "Cell already occupied!" << endl;
-					continue; 
-				}
+					if (gameBoard[4][0] == ' ') {
+						gameBoard[4][0] = 'O';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
+				}XorY++;
 			}
 			else if (move == "BM") {
-				if (gameBoard[4][2] == ' ') {
-					gameBoard[4][2] = 'X';  
+				if (XorY % 2 == 1)
+				{
+					if (gameBoard[4][2] == ' ') {
+						gameBoard[4][2] = 'X';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
 				}
 				else {
-					cout << "Cell already occupied!" << endl;
-					continue;  
-				}
+					if (gameBoard[4][2] == ' ') {
+						gameBoard[4][2] = 'O';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
+				}XorY++;
 			}
 			else if (move == "BR") {
-				if (gameBoard[4][4] == ' ') {
-					gameBoard[4][4] = 'X';  
+				if (XorY % 2 == 1)
+				{
+					if (gameBoard[4][4] == ' ') {
+						gameBoard[4][4] = 'X';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
 				}
 				else {
-					cout << "Cell already occupied!" << endl;
-					continue;  
+					if (gameBoard[4][4] == ' ') {
+						gameBoard[4][4] = 'O';
+					}
+					else {
+						cout << "Cell already occupied!" << endl;
+						continue;
+					}
 				}
+				XorY++;
 			}
 			else {
 				cout << "Invalid move!" << endl;
 				continue;  
 			}
-
 
 
 			
@@ -240,3 +359,5 @@ int main()
 
 	return 0;
 }
+
+
