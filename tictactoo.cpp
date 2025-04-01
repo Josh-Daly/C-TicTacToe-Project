@@ -62,12 +62,18 @@ int main()
 		if (state == 2)
 		{
 			cout << "Tic Tac Toe!" << endl;
-			cout << " / / " << endl;
-			cout << "-+-+-" << endl;
-			cout << " / / " << endl;
-			cout << "-+-+-" << endl;
-			cout << " / / " << endl;
+			
+			cout << "____ " << "___" << "  ___" << endl;
+			cout << " / " << "  /" << "   /  " << endl;
+			cout << "/  " << "_/_ " << " /___" << endl;
 
+			cout << "____ " << "___" << "    ___" << endl;
+			cout << " / " << " /  /| " << " /" << endl;
+			cout << "/  " << "/__/ |" << " /___ " << endl;
+
+			cout << "____ " << "___" << "  ___" << endl;
+			cout << " / " << " /  /" << " /__/" << endl;
+			cout << "/  " << "/__/ " << "/___" << endl;
 
 			//Press y at this part to clear screen and show board again, n to end game
 			cout << "Play game?" << endl;
