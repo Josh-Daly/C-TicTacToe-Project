@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
 	int state = 1, i, j;
-	//State: 1 is setup, 2 is showing, 3 is player move, 4 is enemy move, 0 is game exited
+	//State: 1 is setup, 2 is title, 3 is player move, 4 is enemy move, 0 is game exited
 	char ans = 'n';
 	const int BOARDSIZE = 5;
 	char gameBoard[BOARDSIZE][BOARDSIZE];
@@ -55,42 +55,22 @@ int main()
 			gameBoard[4][4] = ' ';
 			// Above = []|[]|[]
 
-			state = 3;
+			state = 2;
 		}
 
-		//Loop to show game board, used if player enters wrong move
+		//Title Screen
 		if (state == 2)
 		{
-			//Print Board
-			for (i = 0; i < BOARDSIZE; i++)
-			{
-				for (j = 0; j < BOARDSIZE; j++)
-				{
-					cout << gameBoard[i][j];
-				}
-				cout << endl;
-			}
-
-			//Loop to check for victory conditions
-			for (i = 0; i < BOARDSIZE; i++)
-			{
-
-			}
-
-			cout << "Possible moves: (";
-			for (i = 0; i < possMovesVal; i++)
-			{
-				cout << possMoves[i];
-				if (i < possMovesVal - 1)
-				{
-					cout << ", ";
-				}
-			}
-			cout << ")" << endl;
+			cout << "Tic Tac Toe!" << endl;
+			cout << " / / " << endl;
+			cout << "-+-+-" << endl;
+			cout << " / / " << endl;
+			cout << "-+-+-" << endl;
+			cout << " / / " << endl;
 
 
 			//Press y at this part to clear screen and show board again, n to end game
-			cout << "Resume?" << endl;
+			cout << "Play game?" << endl;
 			cin >> ans;
 			system("cls");
 			if (ans != 'y' && ans != 'Y')
@@ -143,10 +123,6 @@ int main()
 			cout << ")" << endl;
 
 			cin >> move;
-
-
-
-			
 
 			if (move == "TL" || move == "tl") {
 				if(XorY%2==1)
