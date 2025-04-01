@@ -1,22 +1,21 @@
+#include <time.h>
 #include <iostream>
+
 
 using namespace std;
 
 
 int main()
 {
-	int state = 1, i, j;
-	//State: 1 is setup, 2 is title, 3 is player move, 4 is enemy move, 0 is game exited
-	char ans = 'n';
-	const int BOARDSIZE = 5;
-	char gameBoard[BOARDSIZE][BOARDSIZE];
-	string possMoves[] = { "TL","TM","TR","ML","M","MR","BL","BM","BR" };
-	int possMovesVal = 9;
-	string move;
-	int XorY = 1;
-
-
 	
+	//State explained: Decides what loop to go through; 1 is setup, 2 is title, 3 is player move, 4 is opponent move, 5 is victory screen, 0 is game exited
+	int state = 1, i, j, XorY=1,possMovesVal=9;
+	const int BOARDSIZE = 5;
+	char ans = 'n', gameBoard[BOARDSIZE][BOARDSIZE];
+	string move, possMoves[] = { "TL","TM","TR","ML","M","MR","BL","BM","BR" };
+
+	//Random Setup, for opponent movement, Irfen , Ill leave this opponent movement to you
+	srand(time(NULL));
 
 	while (state != 0)
 	{
@@ -86,7 +85,7 @@ int main()
 			}
 			else
 			{
-				//If ans is y, set state to 3, which allows to make a move
+				//If ans is y, set state to 3, which starts game
 				state = 3;
 			}
 
@@ -361,5 +360,3 @@ int main()
 
 	return 0;
 }
-
-
