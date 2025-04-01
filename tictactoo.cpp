@@ -4,6 +4,7 @@
 
 using namespace std;
 
+void possMovesFunc(string*, int);
 
 int main()
 {
@@ -12,7 +13,9 @@ int main()
 	int state = 1, i, j, XorY=1,possMovesVal=9;
 	const int BOARDSIZE = 5;
 	char ans = 'n', gameBoard[BOARDSIZE][BOARDSIZE];
-	string move, possMoves[] = { "TL","TM","TR","ML","M","MR","BL","BM","BR" };
+	string move;
+	string possMoves[] = { "TL","TM","TR","ML","M","MR","BL","BM","BR" };
+	string movesReplace[] = { "-TL-","-TM-","-TR-","-ML-","-M-","-MR-","-BL-","-BM-","-BR-" };
 
 	//Random Setup, for opponent movement, Irfen , Ill leave this opponent movement to you
 	srand(time(NULL));
@@ -28,7 +31,7 @@ int main()
 			gameBoard[0][2] = ' ';
 			gameBoard[0][3] = '|';
 			gameBoard[0][4] = ' ';
-			// Above = [] | [] | []
+			// Above = []|[]|[]
 			gameBoard[1][0] = '-';
 			gameBoard[1][1] = '+';
 			gameBoard[1][2] = '-';
@@ -110,23 +113,18 @@ int main()
 			for (i = 0; i < BOARDSIZE; i++)
 			{
 
+
+
+
 			}
 
 			
 
 			//make your move
 			cout << "Make your move: " << endl;
-			cout << "(Possible moves are ";
-			for (i = 0; i < possMovesVal; i++)
-			{
-				cout << possMoves[i];
-				if (i < possMovesVal - 1)
-				{
-					cout << ", ";
-				}
-			}
-			cout << ")" << endl;
 
+			
+			possMovesFunc(&possMoves[0], possMovesVal);
 			cin >> move;
 
 			if (move == "TL" || move == "tl") {
@@ -134,6 +132,7 @@ int main()
 				{
 					if (gameBoard[0][0] == ' ') {
 					gameBoard[0][0] = 'X'; 
+					possMoves[0] = movesReplace[0];
 					}
 					else {
 						system("cls");
@@ -144,6 +143,7 @@ int main()
 				else {
 					if (gameBoard[0][0] == ' ') {
 						gameBoard[0][0] = 'O';
+						possMoves[0] = movesReplace[0];
 					}
 					else {
 						system("cls");
@@ -159,6 +159,7 @@ int main()
 				{
 					if (gameBoard[0][2] == ' ') {
 						gameBoard[0][2] = 'X';
+						possMoves[1] = movesReplace[1];
 					}
 					else {
 						system("cls");
@@ -169,6 +170,7 @@ int main()
 				else {
 					if (gameBoard[0][2] == ' ') {
 						gameBoard[0][2] = 'O';
+						possMoves[1] = movesReplace[1];
 					}
 					else {
 						system("cls");
@@ -182,6 +184,8 @@ int main()
 				{
 					if (gameBoard[0][4] == ' ') {
 						gameBoard[0][4] = 'X';
+						possMoves[2] = movesReplace[2];
+
 					}
 					else {
 						system("cls");
@@ -192,6 +196,7 @@ int main()
 				else {
 					if (gameBoard[0][4] == ' ') {
 						gameBoard[0][4] = 'O';
+						possMoves[2] = movesReplace[2];
 					}
 					else {
 						system("cls");
@@ -205,6 +210,7 @@ int main()
 				{
 					if (gameBoard[2][0] == ' ') {
 						gameBoard[2][0] = 'X';
+						possMoves[3] = movesReplace[3];
 					}
 					else {
 						system("cls");
@@ -215,6 +221,7 @@ int main()
 				else {
 					if (gameBoard[2][0] == ' ') {
 						gameBoard[2][0] = 'O';
+						possMoves[3] = movesReplace[3];
 					}
 					else {
 						system("cls");
@@ -228,6 +235,7 @@ int main()
 				{
 					if (gameBoard[2][2] == ' ') {
 						gameBoard[2][2] = 'X';
+						possMoves[4] = movesReplace[4];
 					}
 					else {
 						system("cls");
@@ -238,6 +246,7 @@ int main()
 				else {
 					if (gameBoard[2][2] == ' ') {
 						gameBoard[2][2] = 'O';
+						possMoves[4] = movesReplace[4];
 					}
 					else {
 						system("cls");
@@ -251,6 +260,7 @@ int main()
 				{
 					if (gameBoard[2][4] == ' ') {
 						gameBoard[2][4] = 'X';
+						possMoves[5] = movesReplace[5];
 					}
 					else {
 						system("cls");
@@ -261,6 +271,7 @@ int main()
 				else {
 					if (gameBoard[2][4] == ' ') {
 						gameBoard[2][4] = 'O';
+						possMoves[5] = movesReplace[5];
 					}
 					else {
 						system("cls");
@@ -274,6 +285,7 @@ int main()
 				{
 					if (gameBoard[4][0] == ' ') {
 						gameBoard[4][0] = 'X';
+						possMoves[6] = movesReplace[6];
 					}
 					else {
 						system("cls");
@@ -284,6 +296,7 @@ int main()
 				else {
 					if (gameBoard[4][0] == ' ') {
 						gameBoard[4][0] = 'O';
+						possMoves[6] = movesReplace[6];
 					}
 					else {
 						system("cls");
@@ -297,6 +310,7 @@ int main()
 				{
 					if (gameBoard[4][2] == ' ') {
 						gameBoard[4][2] = 'X';
+						possMoves[7] = movesReplace[7];
 					}
 					else {
 						system("cls");
@@ -307,6 +321,7 @@ int main()
 				else {
 					if (gameBoard[4][2] == ' ') {
 						gameBoard[4][2] = 'O';
+						possMoves[7] = movesReplace[7];
 					}
 					else {
 						system("cls");
@@ -320,6 +335,7 @@ int main()
 				{
 					if (gameBoard[4][4] == ' ') {
 						gameBoard[4][4] = 'X';
+						possMoves[8] = movesReplace[8];
 					}
 					else {
 						system("cls");
@@ -330,6 +346,7 @@ int main()
 				else {
 					if (gameBoard[4][4] == ' ') {
 						gameBoard[4][4] = 'O';
+						possMoves[8] = movesReplace[8];
 					}
 					else {
 						system("cls");
@@ -359,4 +376,21 @@ int main()
 	cout << "Game ended." << endl;
 
 	return 0;
+}
+
+void possMovesFunc(string* pM,int pMV)
+{
+	int iF;
+	cout << "(";
+	for (iF = 0; iF < pMV; iF++)
+	{
+		cout << *pM;
+		if (iF < pMV - 1)
+		{
+			cout << ", ";
+		}
+		//Says maybe incorrect order as an issue, but this def works as intended
+		*pM++;
+	}
+	cout << ")" << endl;
 }
