@@ -155,8 +155,9 @@ int main()
 					gameBoard[0][0] = 'X'; 
 					}
 					else {
-					cout << "Cell already occupied!" << endl;
-					continue;  
+						system("cls");
+						cout << "Cell already occupied!" << endl;
+						continue;  
 					}
 				}
 				else {
@@ -164,6 +165,7 @@ int main()
 						gameBoard[0][0] = 'O';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -178,6 +180,7 @@ int main()
 						gameBoard[0][2] = 'X';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -187,6 +190,7 @@ int main()
 						gameBoard[0][2] = 'O';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -199,6 +203,7 @@ int main()
 						gameBoard[0][4] = 'X';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -208,6 +213,7 @@ int main()
 						gameBoard[0][4] = 'O';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -220,6 +226,7 @@ int main()
 						gameBoard[2][0] = 'X';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -229,6 +236,7 @@ int main()
 						gameBoard[2][0] = 'O';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -241,6 +249,7 @@ int main()
 						gameBoard[2][2] = 'X';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -250,6 +259,7 @@ int main()
 						gameBoard[2][2] = 'O';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -262,6 +272,7 @@ int main()
 						gameBoard[2][4] = 'X';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -271,6 +282,7 @@ int main()
 						gameBoard[2][4] = 'O';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -283,6 +295,7 @@ int main()
 						gameBoard[4][0] = 'X';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -292,6 +305,7 @@ int main()
 						gameBoard[4][0] = 'O';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -304,6 +318,7 @@ int main()
 						gameBoard[4][2] = 'X';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -313,6 +328,7 @@ int main()
 						gameBoard[4][2] = 'O';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -325,6 +341,7 @@ int main()
 						gameBoard[4][4] = 'X';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -334,6 +351,7 @@ int main()
 						gameBoard[4][4] = 'O';
 					}
 					else {
+						system("cls");
 						cout << "Cell already occupied!" << endl;
 						continue;
 					}
@@ -341,6 +359,7 @@ int main()
 				XorY++;
 			}
 			else {
+				system("cls");
 				cout << "Invalid move!" << endl;
 				continue;  
 			}
