@@ -1,5 +1,4 @@
 #include <iostream>
-#include <stdlib.h> 
 
 using namespace std;
 
@@ -128,7 +127,11 @@ int main()
 
 			}
 
-			cout << "Possible moves: (";
+			
+
+			//make your move
+			cout << "Make your move: " << endl;
+			cout << "(Possible moves are ";
 			for (i = 0; i < possMovesVal; i++)
 			{
 				cout << possMoves[i];
@@ -139,15 +142,13 @@ int main()
 			}
 			cout << ")" << endl;
 
-			//make your move
-			cout << "Make your move (TL, TM, TR, ML, M, MR, BL, BM, BR): " << endl;
 			cin >> move;
 
 
 
 			
 
-			if (move == "TL") {
+			if (move == "TL" || move == "tl") {
 				if(XorY%2==1)
 				{
 					if (gameBoard[0][0] == ' ') {
@@ -170,7 +171,7 @@ int main()
 				XorY++;
 				
 			}
-			else if (move == "TM") {
+			else if (move == "TM" || move == "tm") {
 				if (XorY % 2 == 1)
 				{
 					if (gameBoard[0][2] == ' ') {
@@ -191,7 +192,7 @@ int main()
 					}
 				}XorY++;
 			}
-			else if (move == "TR") {
+			else if (move == "TR" || move == "tr") {
 				if (XorY % 2 == 1)
 				{
 					if (gameBoard[0][4] == ' ') {
@@ -212,7 +213,7 @@ int main()
 					}
 				}XorY++;
 			}
-			else if (move == "ML") {
+			else if (move == "ML" || move == "ml") {
 				if (XorY % 2 == 1)
 				{
 					if (gameBoard[2][0] == ' ') {
@@ -233,7 +234,7 @@ int main()
 					}
 				}XorY++;
 			}
-			else if (move == "M") {
+			else if (move == "M" || move == "m") {
 				if (XorY % 2 == 1)
 				{
 					if (gameBoard[2][2] == ' ') {
@@ -254,7 +255,7 @@ int main()
 					}
 				}XorY++;
 			}
-			else if (move == "MR") {
+			else if (move == "MR" || move == "mr") {
 				if (XorY % 2 == 1)
 				{
 					if (gameBoard[2][4] == ' ') {
@@ -275,7 +276,7 @@ int main()
 					}
 				}XorY++;
 			}
-			else if (move == "BL") {
+			else if (move == "BL" || move == "bl") {
 				if (XorY % 2 == 1)
 				{
 					if (gameBoard[4][0] == ' ') {
@@ -296,7 +297,7 @@ int main()
 					}
 				}XorY++;
 			}
-			else if (move == "BM") {
+			else if (move == "BM" || move == "bm") {
 				if (XorY % 2 == 1)
 				{
 					if (gameBoard[4][2] == ' ') {
@@ -317,7 +318,7 @@ int main()
 					}
 				}XorY++;
 			}
-			else if (move == "BR") {
+			else if (move == "BR" || move == "br") {
 				if (XorY % 2 == 1)
 				{
 					if (gameBoard[4][4] == ' ') {
