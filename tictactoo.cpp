@@ -5,6 +5,8 @@
 using namespace std;
 
 void possMovesFunc(string*, int);
+bool checkWinner(char gameBoard[5][5]);  
+bool isBoardFull(char gameBoard[5][5]);
 
 int main()
 {
@@ -356,6 +358,31 @@ int main()
 				}
 				XorY++;
 			}
+			else if(checkWinner() == true){ 
+				if (XorY%2==1)
+				{
+					cout << "Player 1 WON!" << endl;
+				}
+				if (XorY%2==0)
+				{
+					cout << "Player 2 WON!" << endl;
+				}
+				state = 0;
+				continue;
+			}
+			else if(isBoardFull(gameBoard)){ 
+                system("cls");
+                for (i = 0; i < BOARDSIZE; i++) {
+                    for (j = 0; j < BOARDSIZE; j++) {
+                        cout << gameBoard[i][j];
+                    }
+                    cout << endl;
+                }
+                cout << "It's a draw!" << endl;
+                state = 0;
+                continue;
+
+			}
 			else {
 				system("cls");
 				cout << "Invalid move!" << endl;
@@ -394,3 +421,42 @@ void possMovesFunc(string* pM,int pMV)
 	}
 	cout << ")" << endl;
 }
+
+bool isBoardFull(char gameBoard[5][5]) {
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            if (gameBoard[i][j] == ' ') {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+bool checkWinner(char gameBoard[5][5]) {
+   
+    for (int i = 0; i < 5; i++) {
+        if (gameBoard[i][0] == gameBoard[i][2] && gameBoard[i][2] == gameBoard[i][4] && gameBoard[i][0] != ' ') {
+            return true;
+        }
+    }
+    
+    
+    for (int i = 0; i < 5; i++) {
+        if (gameBoard[0][i] == gameBoard[2][i] && gameBoard[2][i] == gameBoard[4][i] && gameBoard[0][i] != ' ') {
+            return true;
+        }
+    }
+    
+    
+    if (gameBoard[0][0] == gameBoard[2][2] && gameBoard[2][2] == gameBoard[4][4] && gameBoard[0][0] != ' ') {
+        return true;
+    }
+    if (gameBoard[0][4] == gameBoard[2][2] && gameBoard[2][2] == gameBoard[4][0] && gameBoard[0][4] != ' ') {
+        return true;
+    }
+    
+    return false;
+}
+
+	
