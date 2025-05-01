@@ -114,7 +114,13 @@ int main()
             cin >> move;
 
             bool validMove = false;
-            char symbol = (XorY % 2 == 1) ? 'X' : 'O';
+            char symbol;
+            if (XorY % 2 == 1) {
+                symbol = 'X';
+            } else {
+                symbol = 'O';
+            }
+
 
             if (move == "TL" || move == "tl") {
                 if (gameBoard[0][0] == ' ') {
