@@ -103,7 +103,13 @@ int main()
             }
 
             // Indicate which player's turn
-            cout << "Player " << (XorY % 2 == 1 ? "1 (X)" : "2 (O)") << ", make your move: " << endl;
+            if (XorY % 2 == 1) {
+                cout << "Player 1 (X) - Make your move" << endl;
+            }
+            else {
+                cout << "Player 2 (O) - Make your move" << endl;
+            }
+
             possMovesFunc(&possMoves[0], possMovesVal);
             cin >> move;
 
@@ -188,7 +194,13 @@ int main()
                     }
                     cout << endl;
                 }
-                cout << "Player " << (XorY % 2 == 1 ? "1" : "2") << " WON!" << endl;
+                if(XorY % 2 == 1) {
+                    cout << "Player 1 WON!" << endl;
+                }
+                else {
+                cout << "Player 2 WON!" << endl;
+                }
+
                 return 0;
             }
             if (isBoardFull(gameBoard)) {
